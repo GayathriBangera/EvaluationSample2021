@@ -97,7 +97,6 @@ class MainFragment : Fragment() {
     private fun setHeaderTitle(view: View?) {
         //Set news header title
         view?.apply {
-            val layoutHeader = view.findViewById<ConstraintLayout>(R.id.layoutHeader)
             layoutHeader.tvPopularNewsHeader.text =
                 context?.resources?.getString(R.string.popular_news)
             layoutTopNews.setHeaderTitle()

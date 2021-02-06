@@ -5,6 +5,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 open class BaseAPIClient {
+
     companion object {
         private const val BASE_URL = "https://newsapi.org/v2/"
     }

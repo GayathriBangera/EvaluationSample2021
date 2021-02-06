@@ -14,8 +14,8 @@ class TopBarComponent @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-) :
-    ConstraintLayout(context, attrs, defStyleAttr) {
+) : ConstraintLayout(context, attrs, defStyleAttr) {
+
     init {
         LayoutInflater.from(context).inflate(R.layout.layout_top_news, this)
     }
@@ -30,8 +30,7 @@ class TopBarComponent @JvmOverloads constructor(
     }
 
     fun setHeaderTitle() {
-        //To set the header title of the component
-        val layoutHeader = findViewById<ConstraintLayout>(R.id.header)
-        layoutHeader.tvPopularNewsHeader.text = context?.resources?.getString(R.string.top_news)
+        //To set the header title of the component (top news)
+        tvPopularNewsHeader.text = context?.resources?.getString(R.string.top_news)
     }
 }

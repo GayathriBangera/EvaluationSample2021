@@ -6,6 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface NewsAPIService {
+
     companion object {
         const val API_KEY = "apiKey=1eae65a4ac8d4ce6985ba23079a9223a"
     }
@@ -17,5 +18,4 @@ interface NewsAPIService {
     fun getPopularNewsList(
         @Query("pageSize") pageSize: Int = 10
     ): Flowable<NewsResponse>
-
 }

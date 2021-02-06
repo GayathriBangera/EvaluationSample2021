@@ -11,7 +11,9 @@ import kotlinx.android.synthetic.main.layout_popular_news.view.*
 import kotlin.properties.Delegates
 
 class PopularNewsAdapter : RecyclerView.Adapter<PopularNewsAdapter.NewsViewHolder>() {
+
     var itemList: List<NewsArticle> by Delegates.observable(listOf()) { _, _, _ -> notifyDataSetChanged() }
+    
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
