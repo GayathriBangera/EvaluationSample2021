@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/layout_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/ivTopNewsImage"
+        android:layout_width="match_parent"
+        android:layout_height="183dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="15dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
+
+    <TextView
+        android:id="@+id/tvTopNewsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ellipsize="end"
+        android:lineSpacingMultiplier="1.2"
+        android:maxLines="4"
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/ivTopNewsImage"
+        app:layout_constraintTop_toBottomOf="@+id/ivTopNewsImage"
+        tools:text="Top News Title" />
+
+    <TextView
+        android:id="@+id/tvTopNewsDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:lineSpacingMultiplier="1.3"
+        android:maxLines="4"
+        android:textColor="@color/colorLightGrey"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/ivTopNewsImage"
+        app:layout_constraintTop_toBottomOf="@+id/tvTopNewsTitle"
+        tools:text="Top News Description\nTop News Description" />
+
+    <TextView
+        android:id="@+id/tvTopNewsChannelName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_channel"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:padding="10dp"
+        android:textAllCaps="true"
+        android:textColor="@color/colorGrey"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/ivTopNewsImage"
+        app:layout_constraintTop_toBottomOf="@+id/tvTopNewsDescription"
+        tools:text="Channel" />
+</androidx.constraintlayout.widget.ConstraintLayout>

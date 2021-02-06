@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EvaluationSample</string>
+    <string name="popular_image">Popular Image</string>
+    <string name="popular_news">Popular News</string>
+    <string name="top_news">Top News</string>
+    <string name="header">Header</string>
+</resources>
