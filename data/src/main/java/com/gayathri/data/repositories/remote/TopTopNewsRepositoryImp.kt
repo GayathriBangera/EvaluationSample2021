@@ -1,8 +1,8 @@
-package com.gayathri.data.repositories
+package com.gayathri.data.repositories.remote
 
 import com.gayathri.data.retrofit.NewsRepository
 import com.gayathri.domain.models.response.NewsResponse
-import com.gayathri.domain.repository.TopNewsRepository
+import com.gayathri.domain.repository.remote.TopNewsRepository
 import io.reactivex.Flowable
 
 class TopTopNewsRepositoryImp(

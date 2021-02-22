@@ -12,6 +12,6 @@ val presentationModule = module {
         )
     }
     viewModel {
-        PopularNewsViewModel(get())
+        PopularNewsViewModel(get(), get(), get(),get())
     }
 }

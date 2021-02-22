@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -46,8 +45,18 @@ class MainFragment : Fragment() {
 
     private fun initUi() {
         observePopularNewListLiveData()
-        observeTopNewsLiveData()
+        /* observeTopNewsLiveData()
+         observeProgressBarState()*/
     }
+
+    private fun observeProgressBarState() {
+        popularNewsViewModel.liveDataProgressBarState.observe(
+            viewLifecycleOwner,
+            Observer { state ->
+                setProgressBarVisibility(state)
+            })
+    }
+
 
     private fun observeTopNewsLiveData() {
         //Get top news from an API
@@ -61,10 +70,10 @@ class MainFragment : Fragment() {
 
     private fun observePopularNewListLiveData() {
         //Get popular news from an API
-        popularNewsViewModel.getPopularList(INITIAL_PAGE_SIZE)
+//        popularNewsViewModel.getPopularList(INITIAL_PAGE_SIZE)
         popularNewsViewModel.popularNewList.observe(viewLifecycleOwner, Observer { popularList ->
             popularNewAdapter.itemList = popularList
-            setProgressBarVisibility(false)
+//            setProgressBarVisibility(false)
         })
     }
 
@@ -76,7 +85,7 @@ class MainFragment : Fragment() {
         override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
             super.onScrolled(recyclerView, dx, dy)
             if (!recyclerView.canScrollVertically(1)) {
-                setProgressBarVisibility(true)
+//                setProgressBarVisibility(true)
                 //Enable pagination when scrolled and reached end
                 pageSize += 10
                 popularNewsViewModel.setPageSize(pageSize)
@@ -86,7 +95,7 @@ class MainFragment : Fragment() {
 
     private fun initRecyclerView(view: View) {
         //Create Adapter and set up recycler view with adapter
-        popularNewAdapter = PopularNewsAdapter()
+        popularNewAdapter = PopularNewsAdapter(this)
         view.baseRecyclerView?.apply {
             layoutManager = createLayoutManager(context)
             adapter = popularNewAdapter

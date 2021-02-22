@@ -1,7 +1,7 @@
 package com.gayathri.domain.usecases
 
 import com.gayathri.domain.models.response.NewsResponse
-import com.gayathri.domain.repository.PopularNewsRepository
+import com.gayathri.domain.repository.remote.PopularNewsRepository
 import io.reactivex.Flowable
 
 class PopularNewsUseCase(
